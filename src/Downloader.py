@@ -51,6 +51,7 @@ class Downloader:
 			LOG(index, "OKCYAN", False)
 			LOG(": ", "HEADER", False)
 			print(f"{element.resolution} {element.fps}fps")
+		print()
 
 		valid = False
 		chosen = None
@@ -101,17 +102,16 @@ class Downloader:
 	def download_audio(self, url):
 		audio = YouTube(url, on_progress_callback = on_progress)
 
-		index = 1
+		index = 0
 		elements = audio.streams.filter(only_audio = True)
 		print()
 		for element in elements:
+			index += 1
 			LOG("Option ", "HEADER", False)
 			LOG(index, "OKCYAN", False)
 			LOG(": ", "HEADER", False)
 			print(f"{element.mime_type} {element.abr}")
-			index += 1
 		print()
-		index -= 1
 
 		valid = False
 		chosen = None
@@ -124,7 +124,7 @@ class Downloader:
 					return
 				else:
 					option_num = int(option_num)
-					if (option_num < 1 or option_num > index-1):
+					if (option_num < 1 or option_num > index):
 						LOG("[ERROR]: Invalid option chosen. Input is out of range", "FAIL", True)
 					else:
 						valid = True
@@ -133,7 +133,7 @@ class Downloader:
 				LOG("[ERROR]: Argument is not a number", "FAIL", True)
 				pass
 
-		chosen = elements[option_num]
+		chosen = elements[option_num-1]
 		self.current_file_size = chosen.filesize
 
 		LOG("File name: ", "OKCYAN", False)
