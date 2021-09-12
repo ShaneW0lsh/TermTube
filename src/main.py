@@ -1,3 +1,5 @@
+"""Execute this file, in order for program to work"""
+
 from utility import LOG
 from Downloader import Downloader
 
