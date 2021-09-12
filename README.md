@@ -11,7 +11,7 @@ When starting script for the first time, you need to run "/setpath $download_pat
 ## Usage
 ![work_representation](https://user-images.githubusercontent.com/70367786/132987913-cbfe49b6-611f-44c5-b7af-6e7246f6fa83.png)
 You can separate paths for video and audio. For audio only path setting use "/setpath_a" and for video "/setpath_v".
-You don't have to do this every time you start the script, using command described above program saves path string to 
+You don't have to do this every time you start the script, using command described above, program saves path string to 
 JSON file, in order to use this info in future.
 Use "/video <link>" command to download video and "/audio <link> to download audio.
 ## Error Handling
