@@ -1,3 +1,8 @@
+"""
+Youtube Downloader class. Functionality for 
+video/audio downloading is located here.
+"""
+
 from pytube import YouTube
 from pytube.cli import on_progress
 import json
